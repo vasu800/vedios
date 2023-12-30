@@ -3,72 +3,89 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Video Links</title>
+    <title>Free Educational Website</title>
     <style>
         body {
-            font-family: Arial, sans-serif;
-            margin: 20px;
+            font-family: 'Arial', sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f5f5f5;
+            color: #333;
         }
 
-        .video-container {
-            display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
-            gap: 20px;
+        header {
+            background-color: #4CAF50;
+            color: white;
+            padding: 1em;
+            text-align: center;
         }
 
-        .video-item {
-            position: relative;
-            padding-bottom: 56.25%; /* 16:9 aspect ratio */
-            overflow: hidden;
-            border: 1px solid #ddd;
-            border-radius: 8px;
-            box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
+        nav {
+            background-color: #333;
+            color: white;
+            text-align: center;
+            padding: 0.5em;
         }
 
-        .video-item iframe {
+        nav a {
+            color: white;
+            text-decoration: none;
+            padding: 1em;
+        }
+
+        section {
+            padding: 20px;
+        }
+
+        footer {
+            background-color: #333;
+            color: white;
+            text-align: center;
+            padding: 1em;
             position: absolute;
-            top: 0;
-            left: 0;
+            bottom: 0;
             width: 100%;
-            height: 100%;
-        }
-
-        select {
-            margin-bottom: 20px;
         }
     </style>
 </head>
 <body>
-    <h1>Video Links</h1>
+    <header>
+        <h1>Free Educational Website</h1>
+    </header>
 
-    <!-- Dropdown list -->
-    <label for="videoDropdown">Select a video:</label>
-    <select id="videoDropdown" onchange="changeVideo()">
-        <option value="https://www.youtube.com/@Mechcreations8953/playlists">Video 1</option>
-        <option value="https://screenapp.io/app/#/shared/ebf710ee-c8a0-4dd5-9fcc-37bec6f66dc5">Video 2</option>
-        <!-- Add more options as needed -->
-    </select>
+    <nav>
+        <a href="#home">Home</a>
+        <a href="#courses">Courses</a>
+        <a href="#about">About Us</a>
+        <a href="#contact">Contact</a>
+    </nav>
 
-    <div class="video-container">
-        <!-- Video container -->
-        <div class="video-item" id="videoFrame">
-            <!-- Initial iframe will be replaced by JavaScript -->
-            <iframe src="" frameborder="0" allowfullscreen></iframe>
-        </div>
-    </div>
+    <section id="home">
+        <h2>Welcome to our Educational Platform</h2>
+        <p>Explore a variety of free courses and enhance your knowledge.</p>
+    </section>
 
-    <script>
-        // Function to change the video when a new option is selected
-        function changeVideo() {
-            var dropdown = document.getElementById("videoDropdown");
-            var videoFrame = document.getElementById("videoFrame");
+    <section id="courses">
+        <h2>Featured Courses</h2>
+        <ul>
+            <li>Introduction to Programming</li>
+            <li>Web Development Basics</li>
+            <li>Data Science Fundamentals</li>
+        </ul>
+    </section>
 
-            // Get the selected value from the dropdown
-            var selectedVideo = dropdown.options[dropdown.selectedIndex].value;
+    <section id="about">
+        <h2>About Us</h2>
+        <p>We are dedicated to providing free, quality education to learners around the world.</p>
+    </section>
 
-            // Set the iframe source to the selected video
-            videoFrame.innerHTML = '<iframe src="' + selectedVideo + '" frameborder="0" allowfullscreen></iframe>';
-        }
-    </script>
+    <section id="contact">
+        <h2>Contact Us</h2>
+        <p>Have questions or suggestions? Reach out to us at info@example.com</p>
+    </section>
+
+    <footer>
+        <p>&copy; 2023 Free Educational Website. All rights reserved.</p>
+    </footer>
 </body>
 </html>
