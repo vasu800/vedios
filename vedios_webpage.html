@@ -32,22 +32,43 @@
             width: 100%;
             height: 100%;
         }
+
+        select {
+            margin-bottom: 20px;
+        }
     </style>
 </head>
 <body>
     <h1>Video Links</h1>
 
+    <!-- Dropdown list -->
+    <label for="videoDropdown">Select a video:</label>
+    <select id="videoDropdown" onchange="changeVideo()">
+        <option value="https://www.youtube.com/@Mechcreations8953/playlists">Video 1</option>
+        <option value="https://screenapp.io/app/#/shared/ebf710ee-c8a0-4dd5-9fcc-37bec6f66dc5">Video 2</option>
+        <!-- Add more options as needed -->
+    </select>
+
     <div class="video-container">
-        <!-- Replace the src attribute with your video links -->
-        <div class="video-item">
-            <iframe src="https://www.youtube.com/@Mechcreations8953/playlists" frameborder="0" allowfullscreen></iframe>
+        <!-- Video container -->
+        <div class="video-item" id="videoFrame">
+            <!-- Initial iframe will be replaced by JavaScript -->
+            <iframe src="" frameborder="0" allowfullscreen></iframe>
         </div>
-
-        <div class="video-item">
-            <iframe src="https://screenapp.io/app/#/shared/b21ded25-21b2-4b22-9e13-5db2d13c189a" frameborder="0" allowfullscreen></iframe>
-        </div>
-
-        <!-- Add more video items as needed -->
     </div>
+
+    <script>
+        // Function to change the video when a new option is selected
+        function changeVideo() {
+            var dropdown = document.getElementById("videoDropdown");
+            var videoFrame = document.getElementById("videoFrame");
+
+            // Get the selected value from the dropdown
+            var selectedVideo = dropdown.options[dropdown.selectedIndex].value;
+
+            // Set the iframe source to the selected video
+            videoFrame.innerHTML = '<iframe src="' + selectedVideo + '" frameborder="0" allowfullscreen></iframe>';
+        }
+    </script>
 </body>
 </html>
